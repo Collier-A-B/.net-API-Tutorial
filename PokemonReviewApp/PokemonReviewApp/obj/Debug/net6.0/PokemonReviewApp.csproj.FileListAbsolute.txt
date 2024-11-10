@@ -67,3 +67,4 @@ D:\CS Personal Projects\.net-API-Tutorial\PokemonReviewApp\PokemonReviewApp\obj\
 D:\CS Personal Projects\.net-API-Tutorial\PokemonReviewApp\PokemonReviewApp\obj\Debug\net6.0\PokemonReviewApp.pdb
 D:\CS Personal Projects\.net-API-Tutorial\PokemonReviewApp\PokemonReviewApp\obj\Debug\net6.0\PokemonReviewApp.genruntimeconfig.cache
 D:\CS Personal Projects\.net-API-Tutorial\PokemonReviewApp\PokemonReviewApp\obj\Debug\net6.0\ref\PokemonReviewApp.dll
+D:\CS Personal Projects\.net-API-Tutorial\PokemonReviewApp\PokemonReviewApp\bin\Debug\net6.0\AutoMapper.dll
