@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using PokemonReviewApp.Dto;
 using PokemonReviewApp.Interface;
 using PokemonReviewApp.models;
 
@@ -31,7 +32,7 @@ namespace PokemonReviewApp.Controllers
             return Ok(categories);
         }
 
-        [HttpGet("{categoryId")]
+        [HttpGet("{categoryId}")]
         [ProducesResponseType(200, Type = typeof(Category))]
         [ProducesResponseType(400)]
 
@@ -39,12 +40,24 @@ namespace PokemonReviewApp.Controllers
         {
             if (!_categoryRepository.CategoryExists(categoryId)) return NotFound();
 
-            var category = _mapper.Map<Category>(_categoryRepository.GetCategory(categoryId));
+            var category = _mapper.Map<CategoryDto>(_categoryRepository.GetCategory(categoryId));
 
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
             return Ok(category);
         }
 
+        [HttpGet("pokemon/{categoryId}")]
+        [ProducesResponseType(200, Type = typeof(IEnumerable<Pokemon>))]
+        [ProducesResponseType(400)]
+        public IActionResult GetPokemonByCategoryId(int categoryId)
+        {
+            var pokemons = _mapper.Map<List<PokemonDto>>(
+                _categoryRepository.GetPokemonByCategory(categoryId));
+
+            if (!ModelState.IsValid) return BadRequest();
+
+            return Ok(pokemons);
+        }
     }
 }
