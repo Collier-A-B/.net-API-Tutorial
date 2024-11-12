@@ -23,7 +23,7 @@ namespace PokemonReviewApp.Controllers
         [ProducesResponseType(200, Type = typeof(IEnumerable<Category>))]
         public IActionResult GetCategories()
         {
-            var categories = _mapper.Map<List<Category>>(_categoryRepository.GetCategories());
+            var categories = _mapper.Map<List<CategoryDto>>(_categoryRepository.GetCategories());
 
             if (!ModelState.IsValid) 
             { 
